@@ -107,7 +107,6 @@ class Api::V1::UsersController < ApplicationController
 
   def authorized_user?(user = nil)
     user ||= @user
-    binding.pry
     authenticate_with_http_basic do |username, password|
       user.user_id == username && user.password == password
     end
