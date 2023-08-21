@@ -1,3 +1,4 @@
+
 # PostgreSQL. Versions 9.3 and up are supported.
 #
 # Install the pg driver:
@@ -81,6 +82,5 @@ test:
 #
 production:
   <<: *default
-  database: AccountAuthorizationAPI_production
-  username: AccountAuthorizationAPI
-  password: <%= ENV['ACCOUNTAUTHORIZATIONAPI_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE_NAME'] %>
+  url: <%= ENV['INTERNAL_DATABASE_URL'] %>
